@@ -1,0 +1,383 @@
+ID,category,spanish,korean,quiz,answer,answer2,level
+1,ser,Yo soy profesora.,나는 선생님이다.,Yo (      ) profesora.,soy,Soy,하
+2,ser,Tú eres muy amable.,너는 매우 친절하다.,Tú ( ) muy amable.,eres,Eres,하
+3,ser,Él es estudiante de español.,그는 스페인어 학생이다.,Él ( ) estudiante de español.,es,Es,하
+4,ser,Ella es de Corea.,그녀는 한국 출신이다.,Ella ( ) de Corea.,es,Es,하
+5,ser,Nosotros somos amigos.,우리는 친구이다.,Nosotros ( ) amigos.,somos,Somos,하
+6,ser,Vosotros sois muy altos.,너희들은 매우 키가 크다.,Vosotros ( ) muy altos.,sois,Sois,하
+7,ser,Ellos son médicos.,그들은 의사이다.,Ellos ( ) médicos.,son,Son,하
+8,ser,María es mi hermana.,마리아는 나의 여동생이다.,María ( ) mi hermana.,es,Es,하
+9,ser,Juan y Pedro son compañeros de clase.,후안과 페드로는 같은 반 친구이다.,Juan y Pedro ( ) compañeros de clase.,son,Son,하
+10,ser,Yo soy de Seúl.,나는 서울 출신이다.,Yo ( ) de Seúl.,soy,Soy,하
+11,ser,Tú eres muy inteligente.,너는 매우 똑똑하다.,Tú ( ) muy inteligente.,eres,Eres,하
+12,ser,Hoy es el 17 de abril.,오늘은 4월 17일이다.,Hoy ( ) el 17 de abril.,es,Es,하
+13,ser,Nosotros somos coreanos.,우리는 한국인이다.,Nosotros ( ) coreanos.,somos,Somos,하
+14,ser,Ella es muy simpática.,그녀는 매우 상냥하다.,Ella ( ) muy simpática.,es,Es,하
+15,ser,Ellas son estudiantes.,그녀들은 학생이다.,Ellas ( ) estudiantes.,son,Son,하
+16,ser,Tú eres mi mejor amigo.,너는 나의 가장 친한 친구이다.,Tú ( ) mi mejor amigo.,eres,Eres,하
+17,ser,Anita es profesora de inglés.,아나는 영어 선생님이다.,Anita ( ) profesora de inglés.,es,Es,하
+18,ser,Ellos son muy trabajadores.,그들은 매우 성실하다.,Ellos ( ) muy trabajadores.,son,Son,하
+19,ser,Él es mi profesor.,그는 나의 선생님이다.,Él ( ) mi profesor.,es,Es,하
+20,ser,Yo soy italiano.,나는 이탈리아 사람이다.,Yo ( ) italiano.,soy,Soy,하
+21,ser,Tú eres muy guapo.,너는 매우 잘생겼다.,Tú ( ) muy guapo.,eres,Eres,하
+22,ser,Juan es inteligente.,후안은 똑똑하다.,Juan ( ) inteligente.,es,Es,하
+23,ser,La tierra es un planeta.,지구는 행성이다.,La tierra ( ) un planeta.,es,Es,하
+24,ser,María es doctora.,마리아는 의사이다.,María ( ) doctora.,es,Es,하
+25,ser,Vosotros sois de España.,너희들은 스페인 출신이다.,Vosotros ( ) de España.,sois,Sois,하
+26,ser,Ana y Mario son de México.,아나와 마리오는 멕시코 출신이다.,Ana y Mario ( ) de México.,son,Son,하
+27,ser,Yo soy su mejor amigo.,나는 그의 가장 친한 친구이다.,Yo ( ) su mejor amigo.,soy,Soy,하
+28,ser,¿Tú eres arquitecto?,너는 건축가니?,¿Tú ( ) arquitecto?,eres,Eres,하
+29,ser,Ella es alta y hermosa.,그녀는 키가 크고 아름답다.,Ella ( ) alta y hermosa.,es,Es,하
+30,ser,Son las doce y veinte.,12시 20분이다.,( ) las doce y veinte.,son,Son,하
+31,estar,Ustedes están cansados.,여러분은 피곤하다.,Ustedes ( ) cansados.,están,Están,하
+32,estar,Tú estás ocupado.,너는 바쁘다.,Tú ( ) ocupado.,estás,Estás,하
+33,estar,Nosotros estamos en el restaurante.,우리는 식당에 있다.,Nosotros ( ) en el restaurante.,estamos,Estamos,하
+34,estar,Ellos están en casa.,그들은 집에 있다.,Ellos ( ) en casa.,están,Están,하
+35,estar,Ella está preocupada.,그녀는 걱정하고 있다.,Ella ( ) preocupada.,está,Está,하
+36,estar,Yo estoy enfermo.,나는 아프다.,Yo ( ) enfermo.,estoy,Estoy,하
+37,estar,Vosotros estáis ocupados.,너희들은 바쁘다.,Vosotros ( ) ocupados.,estáis,Estáis,하
+38,estar,Ustedes están listos.,여러분은 준비되어 있다.,Ustedes ( ) listos.,están,Están,하
+39,estar,Ellas están ocupadas.,그녀들은 바쁘다.,Ellas ( ) ocupadas.,están,Están,하
+40,estar,Tú estás aquí.,너는 여기 있다.,Tú ( ) aquí.,estás,Estás,하
+41,estar,Yo estoy aquí.,나는 여기 있다.,Yo ( ) aquí.,estoy,Estoy,하
+42,estar,Tú estás en la escuela.,너는 학교에 있다.,Tú ( ) en la escuela.,estás,Estás,하
+43,estar,Él está en el parque.,그는 공원에 있다.,Él ( ) en el parque.,está,Está,하
+44,estar,Nosotros estamos en clase.,우리는 수업 중이다.,Nosotros ( ) en clase.,estamos,Estamos,하
+45,estar,Ella está en la tienda.,그녀는 가게에 있다.,Ella ( ) en la tienda.,está,Está,하
+46,estar,Ellos están en el gimnasio.,그들은 헬스장에 있다.,Ellos ( ) en el gimnasio.,están,Están,하
+47,estar,Ella está en la biblioteca.,그녀는 도서관에 있다.,Ella ( ) en la biblioteca.,está,Está,하
+48,estar,Ellas están felices.,그녀들은 행복하다.,Ellas ( ) felices.,están,Están,하
+49,estar,Tú estás contento.,너는 기쁘다.,Tú ( ) contento.,estás,Estás,하
+50,estar,Nosotros estamos cansados.,우리는 피곤하다.,Nosotros ( ) cansados.,estamos,Estamos,하
+51,estar,Ellos están nerviosos.,그들은 긴장하고 있다.,Ellos ( ) nerviosos.,están,Están,하
+52,estar,Vosotras estáis contentas.,너희들(여성)은 기쁘다.,Vosotras ( ) contentas.,estáis,Estáis,하
+53,estar,Él está tranquilo.,그는 차분하다.,Él ( ) tranquilo.,está,Está,하
+54,estar,Nosotros estamos listas.,우리는 준비되어 있다(여성형).,Nosotros ( ) listas.,estamos,Estamos,하
+55,estar,Ella está en la oficina.,그녀는 사무실에 있다.,Ella ( ) en la oficina.,está,Está,하
+56,estar,Vosotros estáis en Madrid.,너희들은 마드리드에 있다.,Vosotros ( ) en Madrid.,estáis,Estáis,하
+57,estar,Pedro está en el hospital.,페드로는 병원에 있다.,Pedro ( ) en el hospital.,está,Está,하
+58,estar,Tú estás en la clase de español.,너는 스페인어 수업에 있다.,Tú ( ) en la clase de español.,estás,Estás,하
+59,estar,Tú estás con gripe.,너는 감기에 걸렸다.,Tú ( ) con gripe.,estás,Estás,하
+60,estar,¿Cómo está usted?,당신은 어떻게 지내십니까?,¿Cómo ( ) usted?,está,Está,하
+61,estar,Ana está en Colombia.,아나는 콜롬비아에 있다.,Ana ( ) en Colombia.,está,Está,하
+62,estar,Nosotros estamos en primavera.,우리는 봄을 지내고 있다.,Nosotros ( ) en primavera.,estamos,Estamos,하
+63,estar,Ellos están en el primer piso.,그들은 1층에 있다.,Ellos ( ) en el primer piso.,están,Están,하
+64,estar,El auto está frente a la casa.,자동차가 집 앞에 있다.,El auto ( ) frente a la casa.,está,Está,하
+65,estar,El delfín está nadando.,돌고래가 수영하고 있다.,El delfín ( ) nadando.,está,Está,하
+66,estar,Yo estoy aprendiendo español.,나는 스페인어를 배우고 있다.,Yo ( ) aprendiendo español.,estoy,Estoy,하
+67,estar,¿Ustedes están esperando el bus?,여러분은 버스를 기다리고 있습니까?,¿Ustedes ( ) esperando el bus?,están,Están,하
+68,estar,Nosotros estamos desayunando.,우리는 아침 식사를 하고 있다.,Nosotros ( ) desayunando.,estamos,Estamos,하
+69,이름 및 성,¿Cómo te llamas?,너 이름이 뭐야? (1),¿Cómo te ( )?,llamas,Llamas,하
+70,이름 및 성,¿Cuál es tu nombre?,너 이름이 뭐야? (2),¿Cuál es tu ()?,nombre,Nombre,하
+71,이름 및 성,Mi nombre es Carlos.,내 이름은 카를로스야.,Mi () es Carlos.,nombre,Nombres,하
+72,이름 및 성,Yo soy Ana,내 이름은 아나야,Yo () Ana.,soy,Soy,하
+73,이름 및 성,Me llamo Sofía.,내 이름은 소피아야.,Me ( ) Sofía.,llamo,Llamo,하
+74,이름 및 성,¿Cuál es tu apellido?,너 성이 뭐야?,¿Cuál es tu ( )?,apellido,Apellido,중
+75,이름 및 성,Mi apellido es Gómez.,나의 성은 고메스야.,Mi () es Gómez.,apellido,Apellido,중
+76,상태 및 기분,Yo estoy contento.,나는 기쁘다. (남성),Yo estoy ( ). (él),contento,Contento,중
+77,상태 및 기분,Yo estoy contenta.,나는 기쁘다. (여성),Yo estoy ( ). (ella),contenta,Contenta,중
+78,상태 및 기분,Vosotras estáis contentas.,너희들은 기쁘다. (여성 복수),Vosotras estáis ( ). (ellas),contentas,Contentas,상
+79,상태 및 기분,Yo estoy cansado.,나는 피곤하다. (남성),Yo estoy ( ). (él),cansado,Cansado,중
+80,상태 및 기분,Yo estoy cansada.,나는 피곤하다. (여성),Yo estoy ( ). (ella),cansada,Cansada,중
+81,상태 및 기분,Nosotros estamos cansados.,우리는 피곤하다. ,Nosotros estamos ( ).,cansados,Cansados,중
+82,상태 및 기분,Ustedes están cansados.,당신들은 피곤하십니다.,Ustedes están ( ).,cansados,Cansados,중
+83,상태 및 기분,Yo estoy enfermo.,나는 아프다. (남성),Yo estoy ( ). (él),enfermo,Enfermo,상
+84,상태 및 기분,Yo estoy enferma.,나는 아프다. (여성),Yo estoy ( ). (ella),enferma,Enferma,상
+85,상태 및 기분,Ellos están enfermos.,그들은 아프다.,Ellos están ( ).,enfermos,Enfermos,상
+86,상태 및 기분,Tú estás ocupado.,너는 바쁘다. (남성),Tú estás ( ). (él),ocupado,Ocupado,상
+87,상태 및 기분,Ella está ocupada.,그녀는 바쁘다.,Ella está ( ).,ocupada,Ocupada,상
+88,상태 및 기분,Vosotros estáis ocupados.,너희들은 바쁘다.,Vosotros estáis ( ).,ocupados,Ocupados,상
+89,상태 및 기분,Ellas están ocupadas.,그녀들은 바쁘다.,Ellas están ( ).,ocupadas,Ocupadas,상
+90,상태 및 기분,Juan y Pedro están ocupados.,후안과 페드로는 바쁘다.,Juan y Pedro están ( ).,ocupados,Ocupados,상
+91,상태 및 기분,Ella está preocupada.,그녀는 걱정하고 있다.,Ella está ( ).,preocupada,Preocupada,상
+92,상태 및 기분,Ustedes están listos.,당신들은 준비되었습니다. ,Ustedes están ( ).,listos,Listos,상
+93,상태 및 기분,Nosotros estamos listas.,우리는 준비되었습니다. ,Nosotros estamos ( ).,listas,Listas,상
+94,상태 및 기분,Él está nervioso.,그는 긴장한다.,Él está ( ).,nervioso,Nervioso,상
+95,상태 및 기분,Ellos están nerviosos.,그들은 긴장했다.,Ellos están ( ).,nerviosos,Nerviosos,상
+96,상태 및 기분,Él está tranquilo.,그는 차분하다.,Él está ( ).,tranquilo,Tranquilo,상
+97,상태 및 기분,Ella está feliz.,그녀는 행복하다. ,Ella está ( ).,feliz,Feliz,상
+98,상태 및 기분,Ellas están felices.,그녀들은 행복하다. ,Ellas están ( ).,felices,Felices,상
+99,상태 및 기분,Yo estoy triste.,나는 슬프다. ,Yo estoy ( ).,triste,Triste,중
+100,상태 및 기분,Yo estoy bien.,나는 잘 지내. ,Yo estoy ( ).,bien,Bien,중
+101,상태 및 기분,Yo estoy mal.,나는 안 좋게 지내.,Yo estoy ( ).,mal,Mal,중
+102,상태 및 기분,Yo tengo hambre.,나는 배가 고프다.,Yo tengo ( ).,hambre,Hambre,중
+103,상태 및 기분,Tú tienes sed.,너는 목이 마르다.,Tú tienes ( ).,sed,Sed,중
+104,상태 및 기분,Él tiene sueño.,그는 졸리다.,Él tiene ( ).,sueño,Sueño,중
+105,상태 및 기분,Nosotros tenemos frío.,우리는 춥다.,Nosotros tenemos ( ).,frío,Frío,중
+106,상태 및 기분,Vosotros tenéis calor.,너희들은 덥다.,Vosotros tenéis ( ).,calor,Calor,중
+107,상태 및 기분,Ella tiene miedo.,그녀는 무섭다. (두려워하다),Ella tiene ( ).,miedo,Miedo,상
+108,상태 및 기분,Yo estoy alegre,나는 기뻐,Yo estoy (),alegre,Alegre,중
+109,현재진행형,Yo estoy comiendo ahora.,나는 지금 먹는 중이다.,Yo estoy ( ) ahora. (comer),comiendo,Comiendo,중
+110,현재진행형,Tú estás escuchando música.,너는 음악을 듣는 중이다.,Tú estás ( ) música. (escuchar),escuchando,Escuchando,중
+111,현재진행형,Él está comprando un libro.,그는 책을 사는 중이다.,Él está ( ) un libro. (comprar),comprando,Comprando,중
+112,현재진행형,Nosotros estamos caminando en el parque.,우리는 공원에서 걷는 중이다.,Nosotros estamos ( ) en el parque. (caminar),caminando,Caminando,중
+113,현재진행형,Ellos están descansando en casa ahora.,그들은 지금 집에서 쉬는 중이다.,Ellos están ( ) en casa ahora. (descansar),descansando,Descansando,중
+114,현재진행형,Ella está mirando la televisión.,그녀는 TV를 보는 중이다.,Ella está ( ) la televisión. (mirar),mirando,Mirando,중
+115,현재진행형,Ustedes están estudiando español.,당신들은 스페인어를 공부하는 중이다.,Ustedes están ( ) español. (estudiar),estudiando,Estudiando,중
+116,현재진행형,Yo estoy hablando con mi amigo.,나는 친구와 이야기하는 중이다.,Yo estoy ( ) con mi amigo. (hablar),hablando,Hablando,중
+117,현재진행형,Tú estás bebiendo agua.,너는 물을 마시는 중이다.,Tú estás ( ) agua. (beber),bebiendo,Bebiendo,중
+118,현재진행형,Ellas están escribiendo en la clase.,그녀들은 수업에서 글을 쓰는 중이다.,Ellas están ( ) en la clase. (escribir),escribiendo,Escribiendo,중
+119,현재진행형,Él está trabajando en la oficina.,그는 사무실에서 일하는 중이다.,Él está ( ) en la oficina. (trabajar),trabajando,Trabajando,중
+120,현재진행형,Nosotros estamos cantando una canción.,우리는 노래를 부르는 중이다.,Nosotros estamos ( ) una canción. (cantar),cantando,Cantando,중
+121,현재진행형,Ellos están practicando fútbol.,그들은 축구를 연습하는 중이다.,Ellos están ( ) fútbol. (practicar),practicando,Practicando,중
+122,현재진행형,Yo estoy cerrando la puerta.,나는 문을 닫는 중이다.,Yo estoy ( ) la puerta. (cerrar),cerrando,Cerrando,중
+123,현재진행형,Yo estoy jugando con mis amigos.,나는 친구들과 노는 중이다.,Yo estoy ( ) con mis amigos. (jugar),jugando,Jugando,중
+124,성격 및 외모,Yo soy alto.,나는 키가 크다. (남성),Yo soy ( ). (él),alto,Alto,중
+125,성격 및 외모,Yo soy alta.,나는 키가 크다. (여성),Yo soy ( ). (ella),alta,Alta,중
+126,성격 및 외모,Tú eres delgado.,너는 날씬하다. (남성),Tú eres ( ). (él),delgado,Delgado,중
+127,성격 및 외모,Tú eres delgada.,너는 날씬하다. (여성),Tú eres ( ). (ella),delgada,Delgadas,중
+128,성격 및 외모,Él es simpático.,그는 상냥하다. (친절하다),Él es ( ).,simpático,Simpáticos,중
+129,성격 및 외모,Ella es simpática.,그녀는 상냥하다. (친절하다),Ella es ( ).,simpática,Simpática,중
+130,성격 및 외모,Ellos son inteligentes.,그들은 똑똑하다.,Ellos son ( ).,inteligentes,Inteligentes,상
+131,성격 및 외모,Él es bajo.,그는 키가 작다.,Él es ( ).,bajo,Bajo,중
+132,성격 및 외모,Ella es baja.,그녀는 키가 작다.,Ella es ( ).,baja,Baja,중
+133,성격 및 외모,Nosotros somos gordos.,우리는 뚱뚱하다. ,Nosotros somos ( ).,gordos,Gordos,상
+134,성격 및 외모,Vosotros sois guapos.,너희들은 잘생겼다. ,Vosotros sois ( ).,guapos,Guapos,상
+135,성격 및 외모,Ellas son feas.,그녀들은 못생겼다. (여성 복수),Ellas son ( ). (ellas),feas,Feas,상
+136,성격 및 외모,Tú eres antipático.,"너는 심술궂다. (불친절하다, 남성)",Tú eres ( ). (él),antipático,Antipático,중
+137,성격 및 외모,Yo soy trabajadora.,나는 성실하다. (여성),Yo soy ( ). (ella),trabajadora,Trabajadora,상
+138,성격 및 외모,Ellos son trabajadores,그들은 성실하다. ,Ellos son ( ).,trabajadores,Trabajadores,상
+139,"국적, 국적형용사",¿De dónde eres?,너 국적이 뭐야? (1),¿De () eres?,dónde,Dónde,중
+140,"국적, 국적형용사",¿Cuál es tu nacionalidad?,너 국적이 뭐야? (2),¿Cuál es tu ()?,nacionalidad,Nacionalidad,중
+141,"국적, 국적형용사",Yo soy coreano.,나는 한국인이다. (남성),Yo soy ( ). (él),coreano,Coreano,중
+142,"국적, 국적형용사",Yo soy coreana.,나는 한국인이다. (여성),Yo soy ( ). (ella),coreana,Coreana,중
+143,"국적, 국적형용사",Tú eres español.,너는 스페인인이다. (남성),Tú eres ( ). (él),español,Español,중
+144,"국적, 국적형용사",Tú eres española.,너는 스페인인이다. (여성),Tú eres ( ). (ella),española,Española,중
+145,"국적, 국적형용사",Él es mexicano.,그는 멕시코인이다.,Él es ( ).,mexicano,Mexicano,중
+146,"국적, 국적형용사",Ella es mexicana.,그녀는 멕시코인이다.,Ella es ( ).,mexicana,Mexicana,중
+147,"국적, 국적형용사",Nosotros somos coreanos.,우리는 한국인이다. ,Nosotros somos ( ).,coreanos,Coreanos,상
+148,"국적, 국적형용사",Nosotras somos españolas.,우리는 스페인인이다. ,Nosotras somos ( ).,españolas,Españolas,상
+149,"국적, 국적형용사",Ellos son mexicanos.,그들은 멕시코인이다. ,Ellos son ( ).,mexicanos,Mexicanos,상
+150,"국적, 국적형용사",Él es alemán.,그는 독일인이다.,Él es ( ).,alemán,Alemán,중
+151,"국적, 국적형용사",Ella es alemana.,그녀는 독일인이다.,Ella es ( ).,alemana,Alemana,중
+152,"국적, 국적형용사",Él es argentino.,그는 아르헨티나인이다.,Él es ( ).,argentino,Argentino,중
+153,"국적, 국적형용사",Ella es argentina.,그녀는 아르헨티나인이다.,Ella es ( ).,argentina,Argentina,중
+154,"국적, 국적형용사",Tú eres chino.,너는 중국인이다. (남성),Tú eres ( ). (él),chino,Chino,중
+155,"국적, 국적형용사",Tú eres china.,너는 중국인이다. (여성),Tú eres ( ). (ella),china,China,중
+156,"국적, 국적형용사",Yo soy estadounidense.,나는 미국인이다.,Yo soy ( ).,estadounidense,Estadounidense,중
+157,"국적, 국적형용사",Nosotros somos estadounidenses.,우리는 미국인이다. ,Nosotros somos ( ).,estadounidenses,Estadounidenses,상
+158,"국적, 국적형용사",Él es inglés.,그는 영국인이다.,Él es ( ).,inglés,Inglés,중
+159,"국적, 국적형용사",Ella es inglesa.,그녀는 영국인이다. ,Ella es ( ).,inglesa,Inglesa,중
+160,"국적, 국적형용사",Yo soy japonés.,나는 일본인이다. (남성),Yo soy ( ). (él),japonés,Japonés,중
+161,"국적, 국적형용사",Yo soy japonesa.,나는 일본인이다. (여성),Yo soy ( ). (ella),japonesa,Japonesa,중
+162,"국적, 국적형용사",Él es colombiano.,그는 콜롬비아인이다.,Él es ( ).,colombiano,Colombiano,중
+163,"국적, 국적형용사",Ellas son colombianas.,그녀들은 콜롬비아인이다. ,Ellas son ( ).,colombianas,Colombianas,상
+164,"국적, 국적형용사",Tú eres cubano.,너는 쿠바인이다. (남성),Tú eres ( ). (él),cubano,Cubano,중
+165,"국적, 국적형용사",Tú eres cubana.,너는 쿠바인이다. (여성),Tú eres ( ). (ella),cubana,Cubana,중
+166,"국적, 국적형용사",Ellos son peruanos.,그들은 페루인이다.,Ellos son ( ).,peruanos,Peruanos,상
+167,"국적, 국적형용사",Ellas son peruanas.,그녀들은 페루인이다.,Ellas son ( ).,peruanas,Peruanas,상
+168,"국적, 국적형용사",Yo soy de Corea.,나는 한국 출신이다. ,Yo soy de ( ).,Corea,Corea,중
+169,"국적, 국적형용사",Tú eres de España.,너는 스페인 출신이다.,Tú eres de ( ).,España,España,중
+170,"국적, 국적형용사",Él es de México.,그는 멕시코 출신이다.,Él es de ( ).,México,México,중
+171,"국적, 국적형용사",Nosotros somos de Corea.,우리는 한국 출신이다.,Nosotros somos de ( ).,Corea,Corea,중
+172,"국적, 국적형용사",Vosotros sois de España.,너희들은 스페인 출신이다.,Vosotros sois de ( ).,España,España,중
+173,"국적, 국적형용사",Ellos son de México.,그들은 멕시코 출신이다.,Ellos son de ( ).,México,México,중
+174,가족 관계,Carmen es mi esposa.,Carmen은 내 아내야.,Carmen es mi ( ).,esposa,Esposa,중
+175,가족 관계,Pilar es mi prima.,Pilar는 내 사촌이야.,Pilar es mi ( ).,prima,Prima,중
+176,가족 관계,Pablo es mi abuelo.,Pablo는 내 할아버지야.,Pablo es mi ( ).,abuelo,Abuelo,중
+177,가족 관계,Carlos es mi tío.,Carlos는 내 삼촌이야.,Carlos es mi ( ).,tío,Tío,중
+178,가족 관계,Carlos es mi esposo.,Carlos는 내 남편이야.,Carlos es mi ( ).,esposo,Esposo,중
+179,가족 관계,Luis es mi hijo.,Luis는 내 아들이야.,Luis es mi ( ).,hijo,Hijo,중
+180,가족 관계,Pilar es mi hija.,Pilar는 내 딸이야.,Pilar es mi ( ).,hija,Hija,중
+181,가족 관계,Pablo es mi suegro.,Pablo는 내 시아버지야.,Pablo es mi ( ).,suegro,Suegro,중
+182,가족 관계,Carmen es mi suegra.,Carmen은 내 시어머니야.,Carmen es mi ( ).,suegra,Suegra,중
+183,가족 관계,Luis es mi hermano.,Luis는 내 형제이다.,Luis es mi ( ).,hermano,Hermano,중
+184,가족 관계,Pilar es mi hermana.,Pilar는 내 여동생이다.,Pilar es mi ( ).,hermana,Hermana,중
+185,가족 관계,Carlos es mi padre.,Carlos는 내 아버지이다.,Carlos es mi ( ).,padre,Padre,중
+186,가족 관계,Teresa es mi madre.,Teresa는 내 어머니이다.,Teresa es mi ( ).,madre,Madre,중
+187,가족 관계,Antonio y Rosa son mis padres.,Antonio와 Rosa는 내 부모님이다.,Antonio y Rosa son mis ().,padres,Padres,중
+188,가족 관계,Marta es mi prima.,Marta는 내 사촌이다.,Marta es mi ( ).,prima,Prima,중
+189,가족 관계,Juan es mi primo.,Juan은 내 사촌이다.,Juan es mi ( ).,primo,Primo,중
+190,가족 관계,Clara es mi hermana.,Clara는 내 여동생이다.,Clara es mi ( ).,hermana,Hermana,중
+191,가족 관계,Carlos es su esposo.,Carlos는 그녀의 남편이다.,Carlos es su ().,esposo,Esposo,중
+192,가족 관계,Teresa es su esposa.,Teresa는 그의 아내이다.,Teresa es su ().,esposa,Esposa,중
+193,가족 관계,Luis es su hijo.,Luis는 그녀의 아들이다.,Luis es su ().,hijo,Hijo,중
+194,가족 관계,Pilar es su hija.,Pilar는 그의 딸이다.,Pilar es su ().,hija,Hija,중
+195,가족 관계,Marta y Clara son mis primas.,Marta와 Clara는 나의 사촌들이다.,Marta y Clara son mis ( ).,primas,Primas,중
+196,가족 관계,Pablo y Carmen son nuestros abuelos.,Pablo와 Carmen은 우리의 조부모님이다.,Pablo y Carmen son nuestros ().,abuelos,Abuelos,중
+197,가족 관계,Luis y Pilar son sus hijos.,Luis와 Pilar는 그들의 자녀들이다.,Luis y Pilar son sus ( ).,hijos,Hijos,중
+198,가족 관계,Antonio es tu padre.,Antonio는 너의 아버지이다.,Antonio es tu ().,padre,Padre,중
+199,가족 관계,Rosa es tu madre.,Rosa는 너의 어머니이다.,Rosa es tu ().,madre,Madre,중
+200,가족 관계,Marta y Juan son tus primos.,Marta와 Juan은 너의 사촌들이다.,Marta y Juan son tus ().,primos,Primos,중
+201,가족 관계,Teresa es mi madre.,Teresa는 내 엄마/어머니야.,Teresa es mi ( ).,madre,Madre,중
+202,가족 관계,Rosa es mi tía.,Rosa는 내 고모야.,Rosa es mi ( ).,tía,Tía,중
+203,가족 관계,Carlos y Teresa son mis padres.,Carlos와 Teresa는 내 부모님이야.,Carlos y Teresa son mis ( ).,padres,Padres,중
+204,가족 관계,Carlos es mi padre y Antonio es mi tío.,Carlos는 내 아빠고 Antonio는 내 고모부야.,Carlos es mi padre y Antonio es mi ( ).,tío,Tío,중
+205,가족 관계,Pablo es el padre de mi padre.,Pablo는 내 아빠의 아빠야.,Pablo es el padre de mi ( ).,padre,Padre,중
+206,가족 관계,Juan es el hijo de mis tíos.,Juan은 우리 고모네 아해야.,Juan es el hijo de mis ().,tíos,Tíos,중
+207,가족 관계,Rosa es la madre de mis primos.,Rosa는 내 사촌들의 어머니야.,Rosa es la madre de mis ( ).,primos,Primos,중
+208,가족 관계,Juan es mi hijo.,Juan은 나의 아들이야.,Juan es mi ( ).,hijo,Hijo,중
+209,가족 관계,Marta es mi hija.,Marta는 나의 딸이야.,Marta es mi ( ).,hija,Hija,중
+210,가족 관계,Carmen es mi suegra.,Carmen은 내 장모님이야.,Carmen es mi ( ).,suegra,Suegra,중
+211,생일,¿Cuándo es tu cumpleaños?,너 생일이 언제야?,¿Cuándo es tu ( )?,cumpleaños,Cumpleaños,중
+212,생일,Mi cumpleaños es el cinco de mayo.,내 생일은 5월 5일이야.,Mi cumpleaños es el ( ).,cinco de mayo,Cinco de mayo,중
+213,생일,Mi cumpleaños es el doce de julio.,내 생일은 7월 12일이야.,Mi cumpleaños es el ( ).,doce de julio,Doce de julio,중
+214,생일,Mi cumpleaños es el dos de enero.,내 생일은 1월 2일이야.,Mi cumpleaños es el ( ).,dos de enero,Dos de enero,중
+215,생일,Mi cumpleaños es el treinta de agosto.,내 생일은 8월 30일이야.,Mi cumpleaños es el ( ).,treinta de agosto,Treinta de agosto,중
+216,생일,Mi cumpleaños es el veinticuatro de octubre.,내 생일은 10월 24일이야.,Mi cumpleaños es el ( ).,veinticuatro de octubre,Veinticuatro de octubre,중
+217,생일,El veinte de noviembre es el cumpleaños de Carlos.,11월 20일은 Carlos의 생일이야.,El ( ) es el cumpleaños de Carlos.,veinte de noviembre,Veinte de noviembre,중
+218,생일,El quince de septiembre es el cumpleaños de Sofía.,9월 15일은 Sofía의 생일이야.,El ( ) es el cumpleaños de Sofía.,quince de septiembre,Quince de septiembre,중
+219,생일,El ocho de abril es el cumpleaños de Juan.,4월 8일은 Juan의 생일이야.,El ( ) es el cumpleaños de Juan.,ocho de abril,Ocho de abril,중
+220,시간,¿Qué hora es?,지금 몇 시야?,¿Qué ( ) es?,hora,Hora,중
+221,시간,Son las ocho de la mañana.,아침 8시이다.,Son las ocho de la ( ).,mañana,Mañana,중
+222,시간,Son las tres de la tarde.,오후 3시이다.,Son las tres de la ( ).,tarde,Tarde,중
+223,시간,Son las diez de la mañana.,오전 10시이다.,Son las diez de la ( ).,mañana,Mañana,중
+224,시간,Son las cinco de la tarde.,오후 5시이다.,Son las cinco de la ( ).,tarde,Tarde,중
+225,시간,Es la una en punto.,정각 1시이다.,Es la ( ) en punto.,una,Una,중
+226,시간,Son las cinco menos cuarto.,4시 45분이다.,Son las ( ) menos cuarto.,cinco,Cinco,하
+227,시간,Son las once y media.,11시 30분이다.,Son las ( ) y media.,once,Once,하
+228,시간,Son las dos y diez.,2시 10분이다.,Son las dos ( ).,y diez,Y diez,하
+229,시간,Son las seis y veinte.,6시 20분이다. ,Son las seis ( ).,y veinte,Y veinte,하
+230,시간,Son las cinco y cuarto.,5시 15분이다.,Son las cinco ( ).,y cuarto,Y cuarto,하
+231,시간,Son las nueve y media.,9시 30분이다.,Son las nueve ( ).,y media,Y media,중
+232,시간,Son las ocho menos diez.,7시 50분이다.,Son las ocho ( ).,menos diez,Menos diez,중
+233,시간,Son las tres menos cuarto.,2시 45분이다.,Son las tres ( ).,menos cuarto,Menos cuarto,중
+234,시간,Son las ocho menos veinte.,7시 40분이다.,Son las ocho ( ).,menos veinte,Menos veinte,중
+235,요일 및 날짜,¿Qué fecha es hoy?,오늘은 몇 월 며칠입니까?,¿Qué ( ) es hoy?,fecha,Fecha,중
+236,요일 및 날짜,¿Qué día es hoy?,오늘은 무슨 요일입니까?,¿Qué ( ) es hoy?,día,Día,중
+237,요일 및 날짜,Hoy es lunes.,오늘은 월요일입니다.,Hoy es ( ).,lunes,Lunes,중
+238,요일 및 날짜,Hoy es martes.,오늘은 화요일입니다.,Hoy es ( ).,martes,Martes,중
+239,요일 및 날짜,Hoy es miércoles.,오늘은 수요일입니다.,Hoy es ( ).,miércoles,Miércoles,중
+240,요일 및 날짜,Hoy es jueves.,오늘은 목요일입니다.,Hoy es ( ).,jueves,Jueves,중
+241,요일 및 날짜,Hoy es viernes.,오늘은 금요일입니다.,Hoy es ( ).,viernes,Viernes,중
+242,요일 및 날짜,Hoy es sábado.,오늘은 토요일입니다. ,Hoy es ( ).,sábado,Sábado,중
+243,요일 및 날짜,Hoy es domingo.,오늘은 일요일입니다.,Hoy es ( ).,domingo,Domingo,중
+244,요일 및 날짜,Hoy es once de marzo.,오늘은 3월 11일입니다.,Hoy es ( ).,once de marzo,Once de marzo,중
+245,요일 및 날짜,Hoy es trece de abril.,오늘은 4월 13일입니다.,Hoy es ( ).,trece de abril,Trece de abril,중
+246,요일 및 날짜,Hoy es trece de mayo.,오늘은 5월 13일입니다.,Hoy es ( ).,trece de mayo,Trece de mayo,중
+247,요일 및 날짜,Hoy es veintisiete de mayo.,오늘은 5월 27일입니다.,Hoy es ( ).,veintisiete de mayo,Veintisiete de mayo,중
+248,요일 및 날짜,Hoy es veintiocho de mayo.,오늘은 5월 28일입니다.,Hoy es ( ).,veintiocho de mayo,Veintiocho de mayo,중
+249,요일 및 날짜,Hoy es treinta de julio.,오늘은 7월 30일입니다.,Hoy es ( ).,treinta de julio,Treinta de julio,중
+250,요일 및 날짜,Hoy es treinta y uno de agosto.,오늘은 8월 31일입니다.,Hoy es ( ).,treinta y uno de agosto,Treinta y uno de agosto,중
+251,요일 및 날짜,Hoy es dieciocho de octubre.,오늘은 10월 18일입니다.,Hoy es ( ).,dieciocho de octubre,Dieciocho de octubre,중
+252,요일 및 날짜,Hoy es quince de diciembre.,오늘은 12월 15일입니다.,Hoy es ( ).,quince de diciembre,Quince de diciembre,중
+253,요일 및 날짜,Hoy es veinte de enero.,오늘은 1월 20일입니다.,Hoy es ( ).,veinte de enero,Veinte de enero,중
+254,요일 및 날짜,Hoy es veintinueve de febrero.,오늘은 2월 29일입니다.,Hoy es ( ).,veintinueve de febrero,Veintinueve de febrero,중
+255,요일 및 날짜,Hoy es veintitrés de junio.,오늘은 6월 23일입니다. ,Hoy es ( ).,veintitrés de junio,Veintitrés de junio,중
+256,몇시에,¿A qué hora abre el restaurante?,몇 시에 식당이 여나요?,¿A qué hora ( ) el restaurante? ,abre,Abre,중
+257,몇시에,El restaurante abre a las seis y media de la mañana.,오전 6시 30분에 열어요.,El restaurante abre a las seis y ( ) de la mañana. ,media,Media,중
+258,몇시에,¿A qué hora abre la tienda?,몇 시에 가게가 여나요?,¿A qué hora ( ) la tienda? ,abre,Abre,중
+259,몇시에,La tienda abre a las nueve en punto de la mañana.,오전 9시 정각에 열어요.,La tienda abre a las nueve ( ) de la mañana.,en punto,En punto,중
+260,몇시에,¿A qué hora cierra el restaurante?,몇 시에 식당이 닫아요?,¿A qué hora ( ) el restaurante? ,cierra,Cierra,중
+261,몇시에,El restaurante cierra a las siete y cuarto de la tarde.,오후 7시 15분에 닫아요.,El restaurante cierra a las siete y ( ) de la tarde. ,cuarto,Cuarto,중
+262,몇시에,¿A qué hora cierra la biblioteca nacional?,몇 시에 국립 도서관이 닫아요?,¿A qué hora ( ) la biblioteca nacional? ,cierra,Cierran,중
+263,몇시에,La biblioteca nacional cierra a las diez de la noche.,밤 10시에 닫아요.,La biblioteca nacional cierra a las diez de la ( ).,noche,Noche,중
+264,몇시에,¿A qué hora sale el vuelo a Londres?,몇 시에 런던행 비행기가 출발해요?,¿A qué hora ( ) el vuelo a Londres? ,sale,Sale,중
+265,몇시에,El vuelo a Londres sale a las tres menos cinco de la tarde.,오후 2시 55분에 출발해.,El vuelo a Londres sale a las tres ( ) de la tarde. ,menos cinco,Menos cinco,중
+266,몇시에,¿A qué hora llega el vuelo de Toronto?,몇 시에 토론토 출발행 비행기가 도착해?,¿A qué hora ( ) el vuelo de Toronto? ,llega,Llega,중
+267,몇시에,El vuelo de toronto llega a las once y diez de la mañana.,오전 11시 10분에 도착해.,El vuelo de toronto llega a las once ( ) de la mañana.,y diez,Y diez,하
+268,몇시에,¿A qué hora empieza la clase de español?,몇 시에 스페인어 수업이 시작해?,¿A qué hora ( ) la clase de español? ,empieza,Empieza,중
+269,몇시에,La clase de español empieza a las siete y veinte de la mañana.,오전 7시 20분에 시작해.,La clase de español empieza a las siete ( ) de la mañana. ,y veinte,Y veinte,하
+270,몇시에,¿A qué hora empieza el partido de fútbol?,몇 시에 축구 경기가 시작해?,¿A qué hora ( ) el partido de fútbol?,empieza,Empieza,중
+271,몇시에,El partido de fútbol empieza a las seis y catorce de la tarde.,오후 6시 14분에 시작해.,El partido de fútbol empieza a las seis ( ) de la tarde. ,y catorce,Y catorce,하
+272,몇시에,¿A qué hora termina la clase de matemáticas?,몇 시에 수학 수업이 끝나?,¿A qué hora ( ) la clase de matemáticas? ,termina,Termina,중
+273,몇시에,La clase de matemáticas termina a las cinco en punto de la tarde.,오후 5시 정각에 끝나.,La clase de matemáticas termina a las cinco ( ) de la tarde. ,en punto,En punto,중
+274,몇시에,¿A qué hora termina la reunión?,몇 시에 모임이 끝나?,¿A qué hora ( ) la reunión?,termina,Termina,중
+275,몇시에,La reunión termina a las doce menos cuarto de la noche.,밤 11시 45분에 끝나.,La reunión termina a las doce ( ) de la noche. ,menos cuarto,Menos cuarto,중
+276,날씨,¿Qué tiempo hace?,날씨가 어때요?,¿Qué ( ) hace?,tiempo,Tiempo,중
+277,날씨,Hace calor.,날씨가 덥다.,Hace ( ). ,calor,Calor,중
+278,날씨,Hace frío.,날씨가 춥다.,Hace ( ). ,frío,Frío,중
+279,날씨,Hace sol.,화창하다.,Hace ( ). ,sol,Sol,중
+280,날씨,Hace viento.,바람이 분다.,Hace ( ). ,viento,Viento,중
+281,날씨,Está lloviendo.,비가 오고 있다.,Está ( ).,lloviendo,Lloviendo,중
+282,날씨,Está nevando.,눈이 오고 있다.,Está ( ).,nevando,Nevando,중
+283,숫자,uno,1,( ),uno,Uno,하
+284,숫자,dos,2,( ),dos,Dos,하
+285,숫자,tres,3,( ),tres,Tres,하
+286,숫자,cuatro,4,( ),cuatro,Cuatro,하
+287,숫자,cinco,5,( ),cinco,Cinco,하
+288,숫자,seis,6,( ),seis,Seis,하
+289,숫자,siete,7,( ),siete,Siete,하
+290,숫자,ocho,8,( ),ocho,Ocho,하
+291,숫자,nueve,9,( ),nueve,Nueve,하
+292,숫자,diez,10,( ),diez,Diez,하
+293,숫자,once,11,( ),once,Once,하
+294,숫자,doce,12,( ),doce,Doce,하
+295,숫자,trece,13,( ),trece,Trece,하
+296,숫자,catorce,14,( ),catorce,Catorce,하
+297,숫자,quince,15,( ),quince,Quince,하
+298,숫자,dieciséis,16,( ),dieciséis,Dieciséis,중 
+299,숫자,diecisiete,17,( ),diecisiete,Diecisiete,하
+300,숫자,dieciocho,18,( ),dieciocho,Dieciocho,하
+301,숫자,diecisueve,19,( ),diecisueve,Diecisueve,하
+302,숫자,veinte,20,( ),veinte,Veinte,하
+303,숫자,veintiuno,21,( ),veintiuno,Veintiuno,하
+304,숫자,veintidós,22,( ),veintidós,Veintidós,중 
+305,숫자,veintitrés,23,( ),veintitrés,Veintitrés,중
+306,숫자,veinticuatro,24,( ),veinticuatro,Veinticuatro,하
+307,숫자,veinticinco,25,( ),veinticinco,Veinticinco,하
+308,숫자,veintiséis,26,( ),veintiséis,Veintiséis,중
+309,숫자,veintisiete,27,( ),veintisiete,Veintisiete,하
+310,숫자,veintiocho,28,( ),veintiocho,Veintiocho,하
+311,숫자,veintinueve,29,( ),veintinueve,Veintinueve,하
+312,숫자,treinta,30,( ),treinta,Treinta,하
+313,숫자,treinta y uno,31,( ),treinta y uno,Treinta y uno,하
+314,숫자,treinta y dos,32,( ),treinta y dos,Treinta y dos,하
+315,숫자,treinta y tres,33,( ),treinta y tres,Treinta y tres,하
+316,숫자,treinta y cuatro,34,( ),treinta y cuatro,Treinta y cuatro,하
+317,숫자,treinta y cinco,35,( ),treinta y cinco,Treinta y cinco,하
+318,숫자,treinta y seis,36,( ),treinta y seis,Treinta y seis,하
+319,숫자,treinta y siete,37,( ),treinta y siete,Treinta y siete,하
+320,숫자,treinta y ocho,38,( ),treinta y ocho,Treinta y ocho,하
+321,숫자,treinta y nueve,39,( ),treinta y nueve,Treinta y nueve,하
+322,숫자,cuarenta,40,( ),cuarenta,Cuarenta,하
+323,숫자,cuarenta y uno,41,( ),cuarenta y uno,Cuarenta y uno,하
+324,숫자,cuarenta y dos,42,( ),cuarenta y dos,Cuarenta y dos,하
+325,숫자,cuarenta y tres,43,( ),cuarenta y tres,Cuarenta y tres,하
+326,숫자,cuarenta y cuatro,44,( ),cuarenta y cuatro,Cuarenta y cuatro,하
+327,숫자,cuarenta y cinco,45,( ),cuarenta y cinco,Cuarenta y cinco,하
+328,숫자,cuarenta y seis,46,( ),cuarenta y seis,Cuarenta y seis,하
+329,숫자,cuarenta y siete,47,( ),cuarenta y siete,Cuarenta y siete,하
+330,숫자,cuarenta y ocho,48,( ),cuarenta y ocho,Cuarenta y ocho,하
+331,숫자,cuarenta y nueve,49,( ),cuarenta y nueve,Cuarenta y nueve,하
+332,숫자,cincuenta,50,( ),cincuenta,Cincuenta,하
+333,숫자,cincuenta y uno,51,( ),cincuenta y uno,Cincuenta y uno,하
+334,숫자,cincuenta y dos,52,( ),cincuenta y dos,Cincuenta y dos,하
+335,숫자,cincuenta y tres,53,( ),cincuenta y tres,Cincuenta y tres,하
+336,숫자,cincuenta y cuatro,54,( ),cincuenta y cuatro,Cincuenta y cuatro,하
+337,숫자,cincuenta y cinco,55,( ),cincuenta y cinco,Cincuenta y cinco,하
+338,숫자,cincuenta y seis,56,( ),cincuenta y seis,Cincuenta y seis,하
+339,숫자,cincuenta y siete,57,( ),cincuenta y siete,Cincuenta y siete,하
+340,숫자,cincuenta y ocho,58,( ),cincuenta y ocho,Cincuenta y ocho,하
+341,숫자,cincuenta y nueve,59,( ),cincuenta y nueve,Cincuenta y nueve,하
+342,숫자,sesenta,60,( ),sesenta,Sesenta,하
+343,숫자,sesenta y uno,61,( ),sesenta y uno,Sesenta y uno,하
+344,숫자,sesenta y dos,62,( ),sesenta y dos,Sesenta y dos,하
+345,숫자,sesenta y tres,63,( ),sesenta y tres,Sesenta y tres,하
+346,숫자,sesenta y cuatro,64,( ),sesenta y cuatro,Sesenta y cuatro,하
+347,숫자,sesenta y cinco,65,( ),sesenta y cinco,Sesenta y cinco,하
+348,숫자,sesenta y seis,66,( ),sesenta y seis,Sesenta y seis,하
+349,숫자,sesenta y siete,67,( ),sesenta y siete,Sesenta y siete,하
+350,숫자,sesenta y ocho,68,( ),sesenta y ocho,Sesenta y ocho,하
+351,숫자,sesenta y nueve,69,( ),sesenta y nueve,Sesenta y nueve,하
+352,숫자,setenta,70,( ),setenta,Setenta,하
+353,숫자,setenta y uno,73,( ),setenta y uno,Setenta y uno,하
+354,숫자,setenta y dos,72,( ),setenta y dos,Setenta y dos,하
+355,숫자,setenta y tres,73,( ),setenta y tres,Setenta y tres,하
+356,숫자,setenta y cuatro,74,( ),setenta y cuatro,Setenta y cuatro,하
+357,숫자,setenta y cinco,75,( ),setenta y cinco,Setenta y cinco,하
+358,숫자,setenta y seis,76,( ),setenta y seis,Setenta y seis,하
+359,숫자,setenta y siete,77,( ),setenta y siete,Setenta y siete,하
+360,숫자,setenta y ocho,78,( ),setenta y ocho,Setenta y ocho,하
+361,숫자,setenta y nueve,79,( ),setenta y nueve,Setenta y nueve,하
+362,숫자,ochenta,80,( ),ochenta,Ochenta,하
+363,숫자,ochenta y uno,81,( ),ochenta y uno,Ochenta y uno,하
+364,숫자,ochenta y dos,82,( ),ochenta y dos,Ochenta y dos,하
+365,숫자,ochenta y tres,83,( ),ochenta y tres,Ochenta y tres,하
+366,숫자,ochenta y cuatro,84,( ),ochenta y cuatro,Ochenta y cuatro,하
+367,숫자,ochenta y cinco,85,( ),ochenta y cinco,Ochenta y cinco,하
+368,숫자,ochenta y seis,86,( ),ochenta y seis,Ochenta y seis,하
+369,숫자,ochenta y siete,87,( ),ochenta y siete,Ochenta y siete,하
+370,숫자,ochenta y ocho,88,( ),ochenta y ocho,Ochenta y ocho,하
+371,숫자,ochenta y nueve,89,( ),ochenta y nueve,Ochenta y nueve,하
+372,숫자,noventa,90,( ),noventa,Noventa,하
+373,숫자,noventa y uno,91,( ),noventa y uno,Noventa y uno,하
+374,숫자,noventa y dos,92,( ),noventa y dos,Noventa y dos,하
+375,숫자,noventa y tres,93,( ),noventa y tres,Noventa y tres,하
+376,숫자,noventa y cuatro,94,( ),noventa y cuatro,Noventa y cuatro,하
+377,숫자,noventa y cinco,95,( ),noventa y cinco,Noventa y cinco,하
+378,숫자,noventa y seis,96,( ),noventa y seis,Noventa y seis,하
+379,숫자,noventa y siete,97,( ),noventa y siete,Noventa y siete,하
+380,숫자,noventa y ocho,98,( ),noventa y ocho,Noventa y ocho,하
+381,숫자,noventa y nueve,99,( ),noventa y nueve,Noventa y nueve,하
+382,숫자,cien,100,( ),cien,Cien,하
