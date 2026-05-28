@@ -3,19 +3,22 @@ import pandas as pd
 import random
 import os
 
-# --- 1. 세션 상태 설정 (페이지 및 퀴즈 상태 관리 변수) ---
+# --- 1. 세션 상태 설정 ---
 if 'page' not in st.session_state:
-    st.session_state.page = "main"         # 현재 페이지 (main, quiz, collection)
+    st.session_state.page = "main"         
 if 'coin' not in st.session_state:
     st.session_state.coin = 0
 if 'quiz_queue' not in st.session_state:
-    st.session_state.quiz_queue = []       # 10개 문제가 담길 리스트
+    st.session_state.quiz_queue = []       
 if 'quiz_index' not in st.session_state:
-    st.session_state.quiz_index = 0         # 현재 풀고 있는 문제 번호
+    st.session_state.quiz_index = 0         
 if 'quiz_finished' not in st.session_state:
-    st.session_state.quiz_finished = False   # 현재 문제의 정답 제출 여부
+    st.session_state.quiz_finished = False   
 if 'user_feedback' not in st.session_state:
-    st.session_state.user_feedback = None   # 결과를 저장할 변수
+    st.session_state.user_feedback = None   
+# 🌟 [버그 수정용] 뽑기 버튼이 클릭되었는지 감지하는 변수 추가
+if 'shop_clicked' not in st.session_state:
+    st.session_state.shop_clicked = False
 
 # --- 2. 데이터 불러오기 및 분류 ---
 try:
@@ -40,7 +43,7 @@ except FileNotFoundError:
     st.error("Linux 파일 폴더에 'spanish.csv' 파일이 있는지 확인해주세요!")
     st.stop()
 
-# 사이드바는 항상 보임
+# 사이드바 설정
 st.sidebar.metric(label="🪙 내 보유 코인", value=f"{st.session_state.coin} 개")
 
 
@@ -71,26 +74,34 @@ if st.session_state.page == "main":
 
     st.markdown("---")
     
-    # --- 🎁 상점 섹션 ---
+    # --- 🎁 상점 섹션 (버그 수정 반영) ---
     st.subheader("🎁 띠부씰 뽑기 상점")
     if st.session_state.coin >= 10:
-        if st.button("🎰 10코인으로 뽑기!!"):
+        # 🌟 버튼을 누르면 disabled가 작동해 두 번 다시 누를 수 없게 잠금 처리합니다.
+        if st.button("🎰 10코인으로 뽑기!!", disabled=st.session_state.shop_clicked):
+            st.session_state.shop_clicked = True # 버튼 즉시 잠금🔒
+            
             images = [f for f in os.listdir() if f.endswith(".png")]
             if images:
-                st.session_state.coin -= 10
+                st.session_state.coin -= 10      # 코인부터 깎기!
                 selected_img = random.choice(images)
                 st.balloons()
                 st.image(selected_img, caption=f"축하합니다! {selected_img} 획득!", width=200)
                 with open("collection.txt", "a", encoding='utf-8') as f:
                     f.write(selected_img + "\n")
+                
+                # 뽑기 처리가 끝나면 다음 번을 위해 잠금 해제
+                st.session_state.shop_clicked = False
+                st.rerun()
             else:
                 st.warning("이미지 파일이 없습니다.")
+                st.session_state.shop_clicked = False # 에러 시 잠금 해제
     else:
         st.write("코인을 더 모아서 뽑기에 도전하세요! 💪")
 
     st.markdown("---")
     
-    # 🌟 [요청사항 반영] 컬렉션북 이동 버튼을 맨 아래로 배치했습니다!
+    # --- 📖 도감 이동 섹션 ---
     st.subheader("📖 도감 확인하기")
     if st.button("📖 내 컬렉션북 보러가기 →"):
         st.session_state.page = "collection"
@@ -98,7 +109,7 @@ if st.session_state.page == "main":
 
 
 # ==========================================
-# 📝 2. 퀴즈 페이지 화면 (독립된 퀴즈 전용 창)
+# 📝 2. 퀴즈 페이지 화면
 # ==========================================
 elif st.session_state.page == "quiz":
     st.title("📝 스페인어 퀴즈 진행 중")
@@ -119,7 +130,6 @@ elif st.session_state.page == "quiz":
         st.info(f"👉 **{q['quiz']}**")
         st.write(f"💡 뜻: {q['korean']}")
         
-        # 이전 질문에서 적용한 자동완성 끄기(autocomplete="off") 기능도 그대로 유지됩니다.
         user_answer = st.text_input(
             "정답을 입력하세요:", 
             key=f"ans_{current_idx}", 
