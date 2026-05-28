@@ -15,7 +15,7 @@ if 'quiz_index' not in st.session_state:
 if 'quiz_finished' not in st.session_state:
     st.session_state.quiz_finished = False   # 현재 문제의 정답 제출 여부
 if 'user_feedback' not in st.session_state:
-    st.session_state.user_feedback = None   # "정답입니다/틀렸습니다" 결과를 저장할 변수
+    st.session_state.user_feedback = None   # 결과를 저장할 변수
 
 # --- 2. 데이터 불러오기 및 분류 ---
 try:
@@ -48,20 +48,14 @@ st.sidebar.metric(label="🪙 내 보유 코인", value=f"{st.session_state.coin
 # 🏠 1. 메인 페이지 화면 (카테고리 선택 & 상점)
 # ==========================================
 if st.session_state.page == "main":
-    st.title("🇪🇸 스페인어 복습 퀴즈")
-    
-    # 컬렉션북 이동 버튼
-    if st.button("📖 내 컬렉션북 보러가기 →"):
-        st.session_state.page = "collection"
-        st.rerun()
-
+    st.title("🇪🇸 스페인어 복습 퀴즈 & 띠부씰 상점")
     st.markdown("---")
-    st.subheader("🎯 퀴즈 시작하기")
     
+    # --- 🎯 퀴즈 섹션 ---
+    st.subheader("🎯 퀴즈 도전하기")
     categories = list(category_dfs.keys())
     selected_category = st.selectbox('원하는 카테고리를 골라주세요', categories)
 
-    # 🌟 퀴즈 시작 버튼을 누르면 퀴즈 페이지로 전환!
     if st.button("🚀 퀴즈 시작하기 (10문제 세트)"):
         selected_df = category_dfs[selected_category]
         if len(selected_df) == 0:
@@ -72,12 +66,12 @@ if st.session_state.page == "main":
             st.session_state.quiz_index = 0
             st.session_state.quiz_finished = False
             st.session_state.user_feedback = None
-            st.session_state.page = "quiz" # 퀴즈 페이지로 이동!
+            st.session_state.page = "quiz" 
             st.rerun()
 
     st.markdown("---")
     
-    # --- 상점 섹션 ---
+    # --- 🎁 상점 섹션 ---
     st.subheader("🎁 띠부씰 뽑기 상점")
     if st.session_state.coin >= 10:
         if st.button("🎰 10코인으로 뽑기!!"):
@@ -94,6 +88,14 @@ if st.session_state.page == "main":
     else:
         st.write("코인을 더 모아서 뽑기에 도전하세요! 💪")
 
+    st.markdown("---")
+    
+    # 🌟 [요청사항 반영] 컬렉션북 이동 버튼을 맨 아래로 배치했습니다!
+    st.subheader("📖 도감 확인하기")
+    if st.button("📖 내 컬렉션북 보러가기 →"):
+        st.session_state.page = "collection"
+        st.rerun()
+
 
 # ==========================================
 # 📝 2. 퀴즈 페이지 화면 (독립된 퀴즈 전용 창)
@@ -101,12 +103,11 @@ if st.session_state.page == "main":
 elif st.session_state.page == "quiz":
     st.title("📝 스페인어 퀴즈 진행 중")
     
-    # 안전장치: 혹시나 문제가 비어있으면 메인으로 튕겨내기
     if not st.session_state.quiz_queue or st.session_state.quiz_index >= len(st.session_state.quiz_queue):
         st.success("🎉 10문제 세트를 모두 완료했습니다!")
         if st.button("🏠 메인 화면으로 가기"):
             st.session_state.page = "main"
-            st.session_state.quiz_queue = [] # 큐 초기화
+            st.session_state.quiz_queue = [] 
             st.rerun()
     else:
         current_idx = st.session_state.quiz_index
@@ -118,19 +119,18 @@ elif st.session_state.page == "quiz":
         st.info(f"👉 **{q['quiz']}**")
         st.write(f"💡 뜻: {q['korean']}")
         
-        # 🌟 핵심 기능: 정답 제출이 끝나면(quiz_finished가 True가 되면) disabled=True 가 작동하여 정답 수정 불가능!
+        # 이전 질문에서 적용한 자동완성 끄기(autocomplete="off") 기능도 그대로 유지됩니다.
         user_answer = st.text_input(
             "정답을 입력하세요:", 
             key=f"ans_{current_idx}", 
-            disabled=st.session_state.quiz_finished
+            disabled=st.session_state.quiz_finished,
+            autocomplete="off"
         )
         
-        # 정답 제출 전 버튼
         if not st.session_state.quiz_finished:
             if st.button("정답 제출 🎯"):
                 is_correct = (user_answer == str(q['answer'])) or ('answer2' in q and user_answer == str(q['answer2']))
                 
-                # 피드백 내용 저장 (화면 리셋 방지용)
                 if is_correct:
                     st.session_state.user_feedback = {"status": "success", "msg": "Correct! 정답입니다! 🎉"}
                     lvl = q.get('level', '하')
@@ -141,15 +141,12 @@ elif st.session_state.page == "quiz":
                 st.session_state.quiz_finished = True
                 st.rerun()
                 
-        # 정답 제출 후 화면 (결과를 보여주고 입력창과 제출버튼은 얼려버림)
         else:
-            # 보관해 둔 피드백 화면에 뿌려주기
             if st.session_state.user_feedback["status"] == "success":
                 st.success(st.session_state.user_feedback["msg"])
             else:
                 st.error(st.session_state.user_feedback["msg"])
                 
-            # 제출 버튼 대신 "다음 문제" 버튼 띄우기
             if st.button("다음 문제 넘어가기 ➡️"):
                 st.session_state.quiz_index += 1
                 st.session_state.quiz_finished = False
