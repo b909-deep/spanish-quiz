@@ -8,7 +8,7 @@ import time
 if 'user_id' not in st.session_state:
     st.session_state.user_id = None        # 로그인 학번
 if 'page' not in st.session_state:
-    st.session_state.page = "main"         # 현재 화면 (main, quiz, matching, collection, ranking)
+    st.session_state.page = "main"         # 현재 화면 
 if 'coin' not in st.session_state:
     st.session_state.coin = 0              # 코인 수
 if 'quiz_queue' not in st.session_state:
