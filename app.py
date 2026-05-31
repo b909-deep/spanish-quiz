@@ -329,27 +329,21 @@ elif st.session_state.page == "quiz":
 elif st.session_state.page == "matching":
     st.title("🧩 단어 매칭 카드 게임")
     
-    # 상단 정보 메타데이터 표시
     if st.session_state.current_match_category == "number":
         st.subheader(f"📌 카테고리: number [세트 {st.session_state.number_stage} / 2]")
     else:
         st.subheader(f"📌 카테고리: {st.session_state.current_match_category}")
         
-    # 타이머 작동
     if not st.session_state.match_game_over:
         st.session_state.elapsed_time = round(time.time() - st.session_state.start_time, 2)
     
     st.metric(label="⏱️ 현재 경과 시간", value=f"{st.session_state.elapsed_time} 초")
     
-    # 한 세트 완료 조건 달성 시 판정
     if len(st.session_state.matched_pairs) == len(st.session_state.match_words) and not st.session_state.match_game_over:
-        
-        # 🌟 number 카테고리이면서 현재 1세트일 때 -> 2세트로 연장 진행
         if st.session_state.current_match_category == "number" and st.session_state.number_stage == 1:
             st.session_state.number_stage = 2
-            st.session_state.matched_pairs = set() # 초기화 후 다음 10개 불러오기
+            st.session_state.matched_pairs = set()
             
-            # 11번째~20번째 단어 추출
             next_words = st.session_state.number_pool[10:20]
             if len(next_words) > 0:
                 st.session_state.match_words = next_words
@@ -357,18 +351,15 @@ elif st.session_state.page == "matching":
                 st.session_state.right_cards = [w['Korean'].strip() for w in next_words]
                 random.shuffle(st.session_state.left_cards)
                 random.shuffle(st.session_state.right_cards)
-                st.toast("1세트 완료! 이어서 2세트(총 20개 완료 타임어택)가 시작됩니다! 🚀")
+                st.toast("1세트 완료! 이어서 2세트가 시작됩니다! 🚀")
                 st.rerun()
             else:
-                # 다음 단어가 없는 경우 예외처리 종료
                 st.session_state.match_game_over = True
                 save_matching_record("number", st.session_state.user_id, st.session_state.elapsed_time)
         else:
-            # 일반 카테고리이거나 number 카테고리의 2세트까지 최종 완료되었을 때
             st.session_state.match_game_over = True
             save_matching_record(st.session_state.current_match_category, st.session_state.user_id, st.session_state.elapsed_time)
 
-    # 게임 종료 화면 출력
     if st.session_state.match_game_over:
         st.balloons()
         if st.session_state.current_match_category == "number":
@@ -381,15 +372,15 @@ elif st.session_state.page == "matching":
             st.session_state.page = "main"
             st.rerun()
     else:
-        st.write("왼쪽의 스페인어 카드와 오른쪽의 한국어 뜻 카드를 하나씩 눌러 짝을 맞추세요!")
+        st.write("스페인어와 한국어 뜻을 각각 하나씩 눌러 짝을 맞추세요! 한눈에 보이도록 배치되었습니다.")
         
-        col_left, col_right = st.columns(2)
-        
-        with col_left:
-            st.markdown("### 🇪🇸 스페인어")
-            for word in st.session_state.left_cards:
+        # 🌟 4열(Column) 바둑판 격자 구조로 변경하여 스크롤을 완전히 제거
+        st.markdown("### 🇪🇸 스페인어 카드")
+        cols_left = st.columns(4) # 가로로 4칸 배치
+        for idx, word in enumerate(st.session_state.left_cards):
+            with cols_left[idx % 4]: # 4개마다 줄바꿈 자동 수행
                 if word in st.session_state.matched_pairs:
-                    st.button(f"✅ {word}", key=f"left_done_{word}", disabled=True)
+                    st.button(f"✅ {word}", key=f"left_done_{word}", disabled=True, use_container_width=True)
                 else:
                     is_selected = (st.session_state.selected_left == word)
                     label = f"⭐ {word}" if is_selected else word
@@ -397,14 +388,16 @@ elif st.session_state.page == "matching":
                         st.session_state.selected_left = word
                         st.rerun()
                         
-        with col_right:
-            st.markdown("### 🇰🇷 한국어 뜻")
-            for kor_text in st.session_state.right_cards:
+        st.markdown("---")
+        st.markdown("### 🇰🇷 한국어 뜻 카드")
+        cols_right = st.columns(4) # 가로로 4칸 배치
+        for idx, kor_text in enumerate(st.session_state.right_cards):
+            with cols_right[idx % 4]:
                 target_word_dict = next((w for w in st.session_state.match_words if w['Korean'].strip() == kor_text), None)
                 span_origin = target_word_dict['Spanish'].strip() if target_word_dict else ""
                 
                 if span_origin in st.session_state.matched_pairs:
-                    st.button(f"✅ {kor_text}", key=f"right_done_{kor_text}", disabled=True)
+                    st.button(f"✅ {kor_text}", key=f"right_done_{kor_text}", disabled=True, use_container_width=True)
                 else:
                     is_selected = (st.session_state.selected_right == kor_text)
                     label = f"⭐ {kor_text}" if is_selected else kor_text
@@ -427,7 +420,6 @@ elif st.session_state.page == "matching":
             st.session_state.selected_left = None
             st.session_state.selected_right = None
             st.rerun()
-
 
 # ==========================================
 # 📖 4. 컬렉션 페이지 화면 (도감)
