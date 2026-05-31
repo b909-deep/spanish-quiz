@@ -24,7 +24,7 @@ if 'shop_clicked' not in st.session_state:
 
 # [단어 매칭 게임용 변수]
 if 'match_words' not in st.session_state:
-    st.session_state.match_words = []      # 게임에 쓰일 단어 목록
+    st.session_state.match_words = []      # 현재 세트의 단어 목록
 if 'left_cards' not in st.session_state:
     st.session_state.left_cards = []       # 셔플된 스페인어 카드
 if 'right_cards' not in st.session_state:
@@ -34,7 +34,7 @@ if 'selected_left' not in st.session_state:
 if 'selected_right' not in st.session_state:
     st.session_state.selected_right = None # 선택한 한국어 단어
 if 'matched_pairs' not in st.session_state:
-    st.session_state.matched_pairs = set() # 맞춘 단어들의 스페인어 텍스트 저장
+    st.session_state.matched_pairs = set() # 이번 세트에서 맞춘 단어들
 if 'start_time' not in st.session_state:
     st.session_state.start_time = 0        # 게임 시작 시각
 if 'elapsed_time' not in st.session_state:
@@ -43,6 +43,12 @@ if 'match_game_over' not in st.session_state:
     st.session_state.match_game_over = False
 if 'current_match_category' not in st.session_state:
     st.session_state.current_match_category = ""
+
+# 🌟 [새 기능용 변수] number 카테고리 20개 타임어택 관리 변수
+if 'number_stage' not in st.session_state:
+    st.session_state.number_stage = 1      # number 카테고리일 때 1세트인지 2세트인지 기록
+if 'number_pool' not in st.session_state:
+    st.session_state.number_pool = []      # 중복 출제를 막기 위한 전체 단어 풀
 
 
 # --- 2. 💾 파일 저장 / 로드 / 랭킹 기록 함수 ---
@@ -79,54 +85,41 @@ def load_user_data(user_id):
         save_user_data(user_id, 0)
 
 def save_matching_record(category, user_id, elapsed_time):
-    """매칭 게임 완료 시 카테고리별 최고 기록을 저장합니다."""
+    """매칭 게임 완료 시 랭킹 기록을 추가합니다. (기록 누적형태로 변경)"""
     record_file = "matching_rankings.txt"
-    records = {}
-    if os.path.exists(record_file):
-        with open(record_file, "r", encoding='utf-8') as f:
-            for line in f:
-                if "," in line:
-                    cat, uid, t_val = line.strip().split(",")
-                    records[cat] = (uid, float(t_val))
-                    
-    if category not in records or elapsed_time < records[category][1]:
-        records[category] = (user_id, elapsed_time)
-        
-    with open(record_file, "w", encoding='utf-8') as f:
-        for cat, (uid, t_val) in records.items():
-            f.write(f"{cat},{uid},{t_val}\n")
+    with open(record_file, "a", encoding='utf-8') as f:
+        f.write(f"{category},{user_id},{elapsed_time}\n")
 
-def get_matching_rankings():
-    """랭킹 목록을 반환합니다."""
+def get_matching_rankings(category):
+    """선택한 카테고리의 랭킹 기록을 정렬하여 리스트로 반환합니다."""
     record_file = "matching_rankings.txt"
-    records = {}
+    records = []
     if os.path.exists(record_file):
         with open(record_file, "r", encoding='utf-8') as f:
             for line in f:
                 if "," in line:
                     cat, uid, t_val = line.strip().split(",")
-                    records[cat] = (uid, float(t_val))
+                    if cat.strip() == category.strip():
+                        records.append({"학번": uid, "기록 (초)": float(t_val)})
+    # 시간이 적게 걸린(빠른) 순서대로 정렬
+    records = sorted(records, key=lambda x: x["기록 (초)"])
     return records
 
 
 # --- 3. 📝 두 가지 단어장 데이터 파일 읽기 ---
-# 파일 1: 기존 주관식 퀴즈용 파일
 QUIZ_FILE = 'spanish.csv'
 try:
     df_quiz = pd.read_csv(QUIZ_FILE, encoding='utf-8')
-    # 기존 코드의 한글 카테고리 분류 방식 유지
     quiz_categories = [
         'ser', 'estar', '이름 및 성', '상태 및 기분', '현재진행형', 
         '성격 및 외모', '국적, 국적형용사', '가족 관계', '생일', 
         '시간', '요일 및 날짜', '몇시에', '날씨', '숫자'
     ]
-    # 실제 파일에 있는 카테고리만 필터링
     quiz_categories = [cat for cat in quiz_categories if cat in df_quiz['category'].unique()]
 except FileNotFoundError:
     st.error(f"Linux 파일 폴더에 기존 '{QUIZ_FILE}' 파일이 있는지 확인해주세요!")
     st.stop()
 
-# 파일 2: 새로운 단어 매칭 게임용 파일 (새로 업로드한 파일)
 MATCH_FILE = '제목 없는 스프레드시트 - 시트1.csv'
 try:
     df_match = pd.read_csv(MATCH_FILE, encoding='utf-8')
@@ -179,7 +172,6 @@ if st.session_state.page == "main":
     
     with col1:
         st.subheader("📝 주관식 퀴즈 (기존 파일 기준)")
-        # 기존 spanish.csv 카테고리 선택
         selected_quiz_cat = st.selectbox('퀴즈 카테고리 선택', quiz_categories, key="quiz_cat_select")
         
         if st.button("🚀 1. 스페인어 퀴즈 시작", use_container_width=True):
@@ -202,8 +194,7 @@ if st.session_state.page == "main":
             st.rerun()
 
     with col2:
-        st.subheader("🧩 매칭 게임 (새로운 파일 기준)")
-        # 새로운 '제목 없는 스프레드시트' 카테고리 선택
+        st.subheader("🧩 매칭 게임 (새 단어장 파일 기준)")
         selected_match_cat = st.selectbox('매칭 게임 카테고리 선택', match_categories, key="match_cat_select")
         
         if st.button("🧩 2. 단어 매칭 카드 게임 시작", use_container_width=True):
@@ -211,21 +202,36 @@ if st.session_state.page == "main":
             if len(selected_df) == 0:
                 st.warning("해당 카테고리에 데이터가 없습니다.")
             else:
-                count = min(10, len(selected_df))
-                chosen_words = selected_df.sample(n=count).to_dict(orient='records')
-                
-                st.session_state.match_words = chosen_words
-                st.session_state.left_cards = [w['Spanish'].strip() for w in chosen_words]
-                st.session_state.right_cards = [w['Korean'].strip() for w in chosen_words]
-                random.shuffle(st.session_state.left_cards)
-                random.shuffle(st.session_state.right_cards)
-                
-                st.session_state.selected_left = None
-                st.session_state.selected_right = None
-                st.session_state.matched_pairs = set()
                 st.session_state.current_match_category = selected_match_cat
                 st.session_state.match_game_over = False
                 st.session_state.start_time = time.time()
+                st.session_state.selected_left = None
+                st.session_state.selected_right = None
+                st.session_state.matched_pairs = set()
+
+                # 🌟 [number 카테고리 특수 규칙 적용]
+                if selected_match_cat == "number":
+                    st.session_state.number_stage = 1
+                    # 전체 단어 무작위 셔플 후 풀에 저장
+                    all_numbers = selected_df.sample(frac=1).to_dict(orient='records')
+                    st.session_state.number_pool = all_numbers
+                    
+                    # 첫 번째 세트 10개 추출
+                    count = min(10, len(all_numbers))
+                    chosen_words = all_numbers[:count]
+                    st.session_state.match_words = chosen_words
+                else:
+                    # 일반 카테고리는 기존처럼 최대 10개 세팅
+                    count = min(10, len(selected_df))
+                    chosen_words = selected_df.sample(n=count).to_dict(orient='records')
+                    st.session_state.match_words = chosen_words
+                
+                # 카드 리스트 설정 및 셔플
+                st.session_state.left_cards = [w['Spanish'].strip() for w in st.session_state.match_words]
+                st.session_state.right_cards = [w['Korean'].strip() for w in st.session_state.match_words]
+                random.shuffle(st.session_state.left_cards)
+                random.shuffle(st.session_state.right_cards)
+                
                 st.session_state.page = "matching"
                 st.rerun()
                 
@@ -237,7 +243,7 @@ if st.session_state.page == "main":
 
     st.markdown("---")
     
-    # [메뉴 5] 띠부씰 뽑기 상점
+    # 띠부씰 뽑기 상점
     st.subheader("🎁 5. 띠부씰 뽑기 상점")
     if st.session_state.coin >= 10:
         if st.button("🎰 10코인으로 뽑기!!", disabled=st.session_state.shop_clicked, use_container_width=True):
@@ -264,7 +270,7 @@ if st.session_state.page == "main":
 
 
 # ==========================================
-# 📝 2. 퀴즈 페이지 화면 (spanish.csv 기준)
+# 📝 2. 퀴즈 페이지 화면
 # ==========================================
 elif st.session_state.page == "quiz":
     st.title("📝 스페인어 주관식 퀴즈")
@@ -281,7 +287,7 @@ elif st.session_state.page == "quiz":
         q = st.session_state.quiz_queue[current_idx]
         
         st.subheader(f"❓ 문제 {current_idx + 1} / {total_questions}")
-        st.info(f"👉 뜻: **{q['korean']}**")  # 기존 파일의 소문자 'korean' 유지
+        st.info(f"👉 뜻: **{q['korean']}**")
         
         user_answer = st.text_input(
             "정답 입력 (스페인어):", 
@@ -292,7 +298,6 @@ elif st.session_state.page == "quiz":
         
         if not st.session_state.quiz_finished:
             if st.button("정답 제출 🎯"):
-                # 기존 파일의 소문자 'answer' 및 'answer2' 대조 로직 유지
                 is_correct = (user_answer == str(q['answer']).strip()) or ('answer2' in q and user_answer == str(q['answer2']).strip())
                 
                 if is_correct:
@@ -319,26 +324,59 @@ elif st.session_state.page == "quiz":
 
 
 # ==========================================
-# 🧩 3. 단어 매칭 카드 게임 화면 (새 단어장 파일 기준)
+# 🧩 3. 단어 매칭 카드 게임 화면
 # ==========================================
 elif st.session_state.page == "matching":
     st.title("🧩 단어 매칭 카드 게임")
-    st.write(f"카테고리: **{st.session_state.current_match_category}**")
     
+    # 상단 정보 메타데이터 표시
+    if st.session_state.current_match_category == "number":
+        st.subheader(f"📌 카테고리: number [세트 {st.session_state.number_stage} / 2]")
+    else:
+        st.subheader(f"📌 카테고리: {st.session_state.current_match_category}")
+        
+    # 타이머 작동
     if not st.session_state.match_game_over:
         st.session_state.elapsed_time = round(time.time() - st.session_state.start_time, 2)
     
-    st.metric(label="⏱️ 경과 시간", value=f"{st.session_state.elapsed_time} 초")
+    st.metric(label="⏱️ 현재 경과 시간", value=f"{st.session_state.elapsed_time} 초")
     
+    # 한 세트 완료 조건 달성 시 판정
     if len(st.session_state.matched_pairs) == len(st.session_state.match_words) and not st.session_state.match_game_over:
-        st.session_state.match_game_over = True
-        save_matching_record(st.session_state.current_match_category, st.session_state.user_id, st.session_state.elapsed_time)
-        st.session_state.coin += 5
-        save_user_data(st.session_state.user_id, st.session_state.coin)
+        
+        # 🌟 number 카테고리이면서 현재 1세트일 때 -> 2세트로 연장 진행
+        if st.session_state.current_match_category == "number" and st.session_state.number_stage == 1:
+            st.session_state.number_stage = 2
+            st.session_state.matched_pairs = set() # 초기화 후 다음 10개 불러오기
+            
+            # 11번째~20번째 단어 추출
+            next_words = st.session_state.number_pool[10:20]
+            if len(next_words) > 0:
+                st.session_state.match_words = next_words
+                st.session_state.left_cards = [w['Spanish'].strip() for w in next_words]
+                st.session_state.right_cards = [w['Korean'].strip() for w in next_words]
+                random.shuffle(st.session_state.left_cards)
+                random.shuffle(st.session_state.right_cards)
+                st.toast("1세트 완료! 이어서 2세트(총 20개 완료 타임어택)가 시작됩니다! 🚀")
+                st.rerun()
+            else:
+                # 다음 단어가 없는 경우 예외처리 종료
+                st.session_state.match_game_over = True
+                save_matching_record("number", st.session_state.user_id, st.session_state.elapsed_time)
+        else:
+            # 일반 카테고리이거나 number 카테고리의 2세트까지 최종 완료되었을 때
+            st.session_state.match_game_over = True
+            save_matching_record(st.session_state.current_match_category, st.session_state.user_id, st.session_state.elapsed_time)
 
+    # 게임 종료 화면 출력
     if st.session_state.match_game_over:
         st.balloons()
-        st.success(f"🎉 모든 카드 매칭 성공!! 총 걸린 시간: {st.session_state.elapsed_time}초 (보너스 5코인 획득!)")
+        if st.session_state.current_match_category == "number":
+            st.success(f"🎉 대단합니다! 총 20개 단어 매칭 최종 성공!! 클리어 시간: {st.session_state.elapsed_time}초")
+        else:
+            st.success(f"🎉 모든 카드 매칭 성공!! 클리어 시간: {st.session_state.elapsed_time}초")
+            
+        st.caption("⚠️ 매칭 게임은 코인이 제공되지 않습니다.")
         if st.button("🏠 홈 화면으로 가기"):
             st.session_state.page = "main"
             st.rerun()
@@ -355,7 +393,7 @@ elif st.session_state.page == "matching":
                 else:
                     is_selected = (st.session_state.selected_left == word)
                     label = f"⭐ {word}" if is_selected else word
-                    if st.button(label, key=f"left_click_{word}"):
+                    if st.button(label, key=f"left_click_{word}", use_container_width=True):
                         st.session_state.selected_left = word
                         st.rerun()
                         
@@ -370,7 +408,7 @@ elif st.session_state.page == "matching":
                 else:
                     is_selected = (st.session_state.selected_right == kor_text)
                     label = f"⭐ {kor_text}" if is_selected else kor_text
-                    if st.button(label, key=f"right_click_{kor_text}"):
+                    if st.button(label, key=f"right_click_{kor_text}", use_container_width=True):
                         st.session_state.selected_right = kor_text
                         st.rerun()
 
@@ -422,25 +460,35 @@ elif st.session_state.page == "collection":
 
 
 # ==========================================
-# 🏆 5. 랭킹보기 화면 (새 단어장 파일 기준)
+# 🏆 5. 랭킹보기 화면 (카테고리별 선택 조회형태로 개선!)
 # ==========================================
 elif st.session_state.page == "ranking":
     st.title("🏆 단어 매칭 게임 명예의 전당")
-    st.write("새 단어장 카테고리별 매칭 카드 게임을 가장 빠르게 클리어한 학번 1등 목록입니다.")
     
     if st.button("← 홈 화면으로 돌아가기"):
         st.session_state.page = "main"
         st.rerun()
     st.markdown("---")
     
-    rank_data = get_matching_rankings()
+    # 🌟 [요청사항 반영] 카테고리별로 선택해서 랭킹을 모아볼 수 있는 창 구축
+    st.subheader("📊 카테고리 선택 필터")
+    selected_rank_cat = st.selectbox("기록을 확인할 카테고리를 고르세요", match_categories)
+    
+    st.write(f"### 📍 '{selected_rank_cat}' 카테고리 순위 현황")
+    
+    rank_data = get_matching_rankings(selected_rank_cat)
     
     if rank_data:
+        # 순위(1등, 2등...)를 직관적으로 추가하기 위해 DataFrame 생성
         rank_list = []
-        for cat, (uid, t_val) in rank_data.items():
-            rank_list.append({"카테고리": cat, "1등 학번": uid, "최고 기록 (초)": f"{t_val}초"})
+        for index, item in enumerate(rank_data):
+            rank_list.append({
+                "순위": f"{index + 1}등",
+                "학번": item["학번"],
+                "클리어 기록": f"{item['기록 (초)']}초"
+            })
             
         rank_df = pd.DataFrame(rank_list)
-        st.table(rank_df)
+        st.table(rank_df) # 깔끔한 표 형태로 정렬 노출
     else:
-        st.write("아직 등록된 랭킹 기록이 없습니다. 최초의 1등에 도전해 보세요! 🏃")
+        st.info(f"아직 '{selected_rank_cat}' 카테고리에 등록된 타임어택 기록이 없습니다. 첫 기록의 주인공이 되어보세요! 🏃")
