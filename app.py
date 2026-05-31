@@ -197,7 +197,7 @@ if st.session_state.page == "main":
         st.subheader("🧩 매칭 게임 (새 단어장 파일 기준)")
         selected_match_cat = st.selectbox('매칭 게임 카테고리 선택', match_categories, key="match_cat_select")
         
-        if st.button("🧩 2. 단어 매칭 카드 게임 시작", use_container_width=True):
+if st.button("🧩 2. 단어 매칭 카드 게임 시작", use_container_width=True):
             selected_df = df_match[df_match['Category'] == selected_match_cat]
             if len(selected_df) == 0:
                 st.warning("해당 카테고리에 데이터가 없습니다.")
@@ -209,24 +209,18 @@ if st.session_state.page == "main":
                 st.session_state.selected_right = None
                 st.session_state.matched_pairs = set()
 
-                # 🌟 [number 카테고리 특수 규칙 적용]
-                if selected_match_cat == "number":
-                    st.session_state.number_stage = 1
-                    # 전체 단어 무작위 셔플 후 풀에 저장
-                    all_numbers = selected_df.sample(frac=1).to_dict(orient='records')
-                    st.session_state.number_pool = all_numbers
-                    
-                    # 첫 번째 세트 10개 추출
-                    count = min(10, len(all_numbers))
-                    chosen_words = all_numbers[:count]
-                    st.session_state.match_words = chosen_words
-                else:
-                    # 일반 카테고리는 기존처럼 최대 10개 세팅
-                    count = min(10, len(selected_df))
-                    chosen_words = selected_df.sample(n=count).to_dict(orient='records')
-                    st.session_state.match_words = chosen_words
+                # 전체 단어를 무작위로 섞어서 풀(Pool)에 저장
+                all_words = selected_df.sample(frac=1).to_dict(orient='records')
+                st.session_state.number_pool = all_words
+                st.session_state.number_stage = 1  # 1세트 시작
                 
-                # 카드 리스트 설정 및 셔플
+                # 카테고리가 'number'면 10개씩 2세트(총 20개), 일반 카테고리면 5개씩 2세트(총 10개)로 설정
+                if selected_match_cat == "number":
+                    st.session_state.match_words = all_words[:10]  # 첫 세트 10개
+                else:
+                    st.session_state.match_words = all_words[:5]   # 첫 세트 5개
+                
+                # 카드 리스트 셔플
                 st.session_state.left_cards = [w['Spanish'].strip() for w in st.session_state.match_words]
                 st.session_state.right_cards = [w['Korean'].strip() for w in st.session_state.match_words]
                 random.shuffle(st.session_state.left_cards)
@@ -324,61 +318,74 @@ elif st.session_state.page == "quiz":
 
 
 # ==========================================
-# 🧩 3. 단어 매칭 카드 게임 화면
+# 🧩 3. 단어 매칭 카드 게임 화면 (5개씩 2세트 구성 및 number 10개씩 2세트)
 # ==========================================
 elif st.session_state.page == "matching":
     st.title("🧩 단어 매칭 카드 게임")
     
-    if st.session_state.current_match_category == "number":
-        st.subheader(f"📌 카테고리: number [세트 {st.session_state.number_stage} / 2]")
-    else:
-        st.subheader(f"📌 카테고리: {st.session_state.current_match_category}")
+    # 상단 정보 메타데이터 표시 (몇 번째 세트인지 직관적으로 인지 가능)
+    st.subheader(f"📌 카테고리: {st.session_state.current_match_category} [세트 {st.session_state.number_stage} / 2]")
         
+    # 타이머 작동
     if not st.session_state.match_game_over:
         st.session_state.elapsed_time = round(time.time() - st.session_state.start_time, 2)
     
     st.metric(label="⏱️ 현재 경과 시간", value=f"{st.session_state.elapsed_time} 초")
     
+    # 이번 세트 단어를 모두 맞췄을 때의 판정
     if len(st.session_state.matched_pairs) == len(st.session_state.match_words) and not st.session_state.match_game_over:
-        if st.session_state.current_match_category == "number" and st.session_state.number_stage == 1:
+        
+        # 아직 1세트 완료 상황일 때 -> 2세트로 자동 연장 진행
+        if st.session_state.number_stage == 1:
             st.session_state.number_stage = 2
-            st.session_state.matched_pairs = set()
+            st.session_state.matched_pairs = set()  # 맞춘 기록 초기화
             
-            next_words = st.session_state.number_pool[10:20]
+            # 다음 2세트 단어 범위 가져오기
+            if st.session_state.current_match_category == "number":
+                # number는 11번째~20번째 단어 (총 20개 완성)
+                next_words = st.session_state.number_pool[10:20]
+            else:
+                # 일반 카테고리는 6번째~10번째 단어 (총 10개 완성)
+                next_words = st.session_state.number_pool[5:10]
+                
             if len(next_words) > 0:
                 st.session_state.match_words = next_words
                 st.session_state.left_cards = [w['Spanish'].strip() for w in next_words]
                 st.session_state.right_cards = [w['Korean'].strip() for w in next_words]
                 random.shuffle(st.session_state.left_cards)
                 random.shuffle(st.session_state.right_cards)
-                st.toast("1세트 완료! 이어서 2세트가 시작됩니다! 🚀")
+                st.toast("👏 1세트 완료! 이어서 2세트가 시작됩니다. 파이팅!")
                 st.rerun()
             else:
+                # 단어장에 단어가 부족해서 2세트를 만들 수 없는 경우 바로 게임 종료
                 st.session_state.match_game_over = True
-                save_matching_record("number", st.session_state.user_id, st.session_state.elapsed_time)
+                save_matching_record(st.session_state.current_match_category, st.session_state.user_id, st.session_state.elapsed_time)
         else:
+            # 2세트까지 모두 최종 완료되었을 때 종료
             st.session_state.match_game_over = True
             save_matching_record(st.session_state.current_match_category, st.session_state.user_id, st.session_state.elapsed_time)
 
+    # 게임 종료 화면 출력
     if st.session_state.match_game_over:
         st.balloons()
         if st.session_state.current_match_category == "number":
-            st.success(f"🎉 대단합니다! 총 20개 단어 매칭 최종 성공!! 클리어 시간: {st.session_state.elapsed_time}초")
+            st.success(f"🎉 2세트 완료! 총 20개 단어 매칭 성공!! 기록: {st.session_state.elapsed_time}초")
         else:
-            st.success(f"🎉 모든 카드 매칭 성공!! 클리어 시간: {st.session_state.elapsed_time}초")
+            st.success(f"🎉 2세트 완료! 총 10개 단어 매칭 성공!! 기록: {st.session_state.elapsed_time}초")
             
         st.caption("⚠️ 매칭 게임은 코인이 제공되지 않습니다.")
         if st.button("🏠 홈 화면으로 가기"):
             st.session_state.page = "main"
             st.rerun()
     else:
-        st.write("스페인어와 한국어 뜻을 각각 하나씩 눌러 짝을 맞추세요! 한눈에 보이도록 배치되었습니다.")
+        st.write("스페인어 카드와 한글 카드 뜻을 하나씩 매칭하세요! 화면 내에 쏙 들어오도록 구성되었습니다.")
         
-        # 🌟 4열(Column) 바둑판 격자 구조로 변경하여 스크롤을 완전히 제거
-        st.markdown("### 🇪🇸 스페인어 카드")
-        cols_left = st.columns(4) # 가로로 4칸 배치
-        for idx, word in enumerate(st.session_state.left_cards):
-            with cols_left[idx % 4]: # 4개마다 줄바꿈 자동 수행
+        # 좌우 배치를 활용하여 스크롤 유발 요소를 완벽히 억제
+        col_left, col_right = st.columns(2)
+        
+        with col_left:
+            st.markdown("### 🇪🇸 스페인어")
+            for word in st.session_state.left_cards:
                 if word in st.session_state.matched_pairs:
                     st.button(f"✅ {word}", key=f"left_done_{word}", disabled=True, use_container_width=True)
                 else:
@@ -388,11 +395,9 @@ elif st.session_state.page == "matching":
                         st.session_state.selected_left = word
                         st.rerun()
                         
-        st.markdown("---")
-        st.markdown("### 🇰🇷 한국어 뜻 카드")
-        cols_right = st.columns(4) # 가로로 4칸 배치
-        for idx, kor_text in enumerate(st.session_state.right_cards):
-            with cols_right[idx % 4]:
+        with col_right:
+            st.markdown("### 🇰🇷 한국어 뜻")
+            for kor_text in st.session_state.right_cards:
                 target_word_dict = next((w for w in st.session_state.match_words if w['Korean'].strip() == kor_text), None)
                 span_origin = target_word_dict['Spanish'].strip() if target_word_dict else ""
                 
@@ -405,6 +410,7 @@ elif st.session_state.page == "matching":
                         st.session_state.selected_right = kor_text
                         st.rerun()
 
+        # 정답 대조 판정 로직
         if st.session_state.selected_left and st.session_state.selected_right:
             s_select = st.session_state.selected_left
             k_select = st.session_state.selected_right
@@ -420,7 +426,6 @@ elif st.session_state.page == "matching":
             st.session_state.selected_left = None
             st.session_state.selected_right = None
             st.rerun()
-
 # ==========================================
 # 📖 4. 컬렉션 페이지 화면 (도감)
 # ==========================================
