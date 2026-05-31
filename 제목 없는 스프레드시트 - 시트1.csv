@@ -1,0 +1,97 @@
+Category,Spanish,Korean
+family,padre / papá,아버지 / 아빠
+family,madre / mamá,어머니 / 엄마
+family,hermano,형제 / 남자 형제
+family,hermana,여동생 / 여자 형제
+family,abuelo,할아버지
+family,abuela,할머니
+family,tío,삼촌 / 고모부 / 이모부
+family,tía,고모 / 이모 / 숙모
+family,primo,사촌 (남자)
+family,prima,사촌 (여자)
+family,hijo,아들
+family,hija,딸
+family,esposo,남편
+family,esposa,아내
+family,suegro,시아버지 / 장인어른
+family,suegra,시어머니 / 장모님
+family,hijos,자녀들 / 아들들
+day,lunes,월요일
+day,martes,화요일
+day,miércoles,수요일
+day,jueves,목요일
+day,viernes,금요일
+day,sábado,토요일
+day,domingo,일요일
+months,enero,1월
+months,febrero,2월
+months,marzo,3월
+months,abril,4월
+months,mayo,5월
+months,junio,6월
+months,julio,7월
+months,agosto,8월
+months,septiembre,9월
+months,octubre,10월
+months,noviembre,11월
+months,diciembre,12월
+Adjetive,alto/a,키가 큰
+Adjetive,bajo/a,키가 작은
+Adjetive,"bonito/a, guapo/a",잘생긴 / 예쁜
+Adjetive,feo/a,못생긴
+Adjetive,gordo/a,뚱뚱한
+Adjetive,delgado/a,마른
+Adjetive,grande,큰
+Adjetive,pequeño/a,작은
+Adjetive,simpático/a,친절한
+Adjetive,antipático/a,불친절한
+Adjetive,viejo/a,나이가 많은
+Adjetive,joven,젊은
+Adjetive,listo/a,똑똑한
+Adjetive,inteligente,똑똑한
+feeling,Estoy contento.,기뻐
+feeling,Estoy triste.,슬퍼
+feeling,Tengo frío. / Hace frío.,추워 / 춥다
+feeling,Tengo calor. / Hace calor.,더워 / 덥다
+feeling,Tengo hambre.,배고파
+feeling,Tengo sed.,목말라
+feeling,Tengo miedo.,무서워
+feeling,Tengo sueño.,졸려
+nationality,Corea,한국 (국가)
+nationality,Coreano,한국인 (남)
+nationality,Coreana,한국인 (여)
+nationality,España,스페인 (국가)
+nationality,Español,스페인인 (남)
+nationality,Española,스페인인 (여)
+nationality,México,멕시코 (국가)
+nationality,Mexicano,멕시코인 (남)
+nationality,Mexicana,멕시코인 (여)
+nationality,Alemania,독일 (국가)
+nationality,Alemán,독일인 (남)
+nationality,Alemana,독일인 (여)
+nationality,Argentina,아르헨티나 (국가)
+nationality,Argentino,아르헨티나인 (남)
+nationality,Argentina,아르헨티나인 (여)
+nationality,China,중국 (국가)
+nationality,Chino,중국인 (남)
+nationality,China,중국인 (여)
+nationality,Estados Unidos,미국 (국가)
+nationality,Estadounidense,미국인
+nationality,Francia,프랑스 (국가)
+nationality,Francés,프랑스인 (남)
+nationality,Francesa,프랑스인 (여)
+nationality,Inglaterra,영국 (국가)
+nationality,Inglés,영국인 (남)
+nationality,Inglesa,영국인 (여)
+nationality,Japón,일본 (국가)
+nationality,Japonés,일본인 (남)
+nationality,Japonesa,일본인 (여)
+nationality,Colombia,콜롬비아 (국가)
+nationality,Colombiano,콜롬비아인 (남)
+nationality,Colombiana,콜롬비아인 (여)
+nationality,Cuba,쿠바 (국가)
+nationality,Cubano,쿠바인 (남)
+nationality,Cubana,쿠바인 (여)
+nationality,Perú,페루 (국가)
+nationality,Peruano,페루인 (남)
+nationality,Peruana,페루인 (여)
