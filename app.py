@@ -197,7 +197,8 @@ if st.session_state.page == "main":
         st.subheader("🧩 매칭 게임 (새 단어장 파일 기준)")
         selected_match_cat = st.selectbox('매칭 게임 카테고리 선택', match_categories, key="match_cat_select")
         
-if st.button("🧩 2. 단어 매칭 카드 게임 시작", use_container_width=True):
+        # 🌟 이 부분의 들여쓰기를 with col2 내부 수준(공백 8칸)으로 올바르게 수정했습니다.
+        if st.button("🧩 2. 단어 매칭 카드 게임 시작", use_container_width=True):
             selected_df = df_match[df_match['Category'] == selected_match_cat]
             if len(selected_df) == 0:
                 st.warning("해당 카테고리에 데이터가 없습니다.")
