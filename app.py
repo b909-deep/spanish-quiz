@@ -268,11 +268,11 @@ if st.session_state.page == "main":
 # 📝 2. 퀴즈 페이지 화면
 # ==========================================
 elif st.session_state.page == "quiz":
-    st.title("📝 스페인어 주관식 퀴즈")
+    st.title("📝 스페인어 퀴즈 진행 중")
     
     if not st.session_state.quiz_queue or st.session_state.quiz_index >= len(st.session_state.quiz_queue):
         st.success("🎉 10문제 세트를 모두 완료했습니다!")
-        if st.button("🏠 홈 화면으로 돌아가기"):
+        if st.button("🏠 메인 화면으로 가기"):
             st.session_state.page = "main"
             st.session_state.quiz_queue = [] 
             st.rerun()
@@ -282,18 +282,20 @@ elif st.session_state.page == "quiz":
         q = st.session_state.quiz_queue[current_idx]
         
         st.subheader(f"❓ 문제 {current_idx + 1} / {total_questions}")
-        st.info(f"👉 뜻: **{q['korean']}**")
+        st.caption(f"난이도: {q.get('level', '하')}")
+        st.info(f"👉 **{q['quiz']}**")
+        st.write(f"💡 뜻: {q['korean']}")
         
         user_answer = st.text_input(
-            "정답 입력 (스페인어):", 
+            "정답을 입력하세요:", 
             key=f"ans_{current_idx}", 
             disabled=st.session_state.quiz_finished,
             autocomplete="off"
-        ).strip()
+        )
         
         if not st.session_state.quiz_finished:
             if st.button("정답 제출 🎯"):
-                is_correct = (user_answer == str(q['answer']).strip()) or ('answer2' in q and user_answer == str(q['answer2']).strip())
+                is_correct = (user_answer == str(q['answer'])) or ('answer2' in q and user_answer == str(q['answer2']))
                 
                 if is_correct:
                     st.session_state.user_feedback = {"status": "success", "msg": "Correct! 정답입니다! 🎉"}
@@ -303,8 +305,10 @@ elif st.session_state.page == "quiz":
                     st.session_state.user_feedback = {"status": "error", "msg": f"Incorrect! 정답은 [{q['answer']}] 입니다. 🥲"}
                 
                 save_user_data(st.session_state.user_id, st.session_state.coin)
+                
                 st.session_state.quiz_finished = True
                 st.rerun()
+                
         else:
             if st.session_state.user_feedback["status"] == "success":
                 st.success(st.session_state.user_feedback["msg"])
