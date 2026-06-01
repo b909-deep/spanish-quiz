@@ -135,12 +135,12 @@ except FileNotFoundError:
 # 🔐 0. 로그인 화면 (학번 입력창)
 # ==========================================
 if st.session_state.user_id is None:
-    st.title("🔐 스페인어 학습 통합 시스템")
+    st.title("🔐 ¡Hola Español!")
     st.write("개인 플레이 데이터를 관리하기 위해 학번을 입력해 주세요.")
     
     input_id = st.text_input("학번을 입력해주세요 (예: 30101):", autocomplete="off").strip()
     
-    if st.button("로그인 및 대시보드 이동 🚀"):
+    if st.button("로그인 🚀"):
         if input_id == "":
             st.warning("학번을 올바르게 입력해주세요!")
         else:
@@ -164,14 +164,14 @@ if st.sidebar.button("다른 학번으로 로그인 🚪"):
 # 🏠 1. 메인 대시보드 화면
 # ==========================================
 if st.session_state.page == "main":
-    st.title("🇪🇸 스페인어 복습 & 띠부씰 시스템")
+    st.title("🇪🇸 스페인어 복습")
     st.write(f"안녕하세요 {st.session_state.user_id}님! 원하시는 메뉴를 선택하세요.")
     st.markdown("---")
     
     col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader("📝 주관식 퀴즈 (기존 파일 기준)")
+        st.subheader("📝 주관식 퀴즈")
         selected_quiz_cat = st.selectbox('퀴즈 카테고리 선택', quiz_categories, key="quiz_cat_select")
         
         if st.button("🚀 1. 스페인어 퀴즈 시작", use_container_width=True):
@@ -194,7 +194,7 @@ if st.session_state.page == "main":
             st.rerun()
 
     with col2:
-        st.subheader("🧩 매칭 게임 (새 단어장 파일 기준)")
+        st.subheader("🧩 매칭 게임")
         selected_match_cat = st.selectbox('매칭 게임 카테고리 선택', match_categories, key="match_cat_select")
         
         # 🌟 이 부분의 들여쓰기를 with col2 내부 수준(공백 8칸)으로 올바르게 수정했습니다.
